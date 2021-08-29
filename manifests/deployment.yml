@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: lenzaforosecurity 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lenzaforosecurity
+  template:
+    metadata:
+      labels:
+        app: lenzaforosecurity 
+    spec:
+      containers:
+        - name: lenzaforosecurity 
+          image: registrybanklenz90.azurecr.io/lenzaforosecurity
+          ports:
+          - containerPort: 8080
